@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'techniques/home'
   get 'home/index'
 
   root 'home#index'
