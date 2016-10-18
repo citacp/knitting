@@ -1,0 +1,23 @@
+<% provide(:title, 'All tutorials') %>
+<h1>All Tutorials</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Link</th>
+    <th>Description</th>
+  </tr>
+
+  <ul class="tutorials">
+
+   <% @tutorials.each do |tutorial| %>
+      <tr>
+        <td><%= tutorial.name %></td>
+        <td> <a href= <%= tutorial.link %> target="_blank"><%= tutorial.link %></a> </td>
+        <td><%= tutorial.description %></td>
+      </tr>
+    <% end %>
+  </ul>
+
+
+</table>

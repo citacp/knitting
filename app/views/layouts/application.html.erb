@@ -7,11 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "Threaddit", '#', id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Patterns",   root_path %></li>
+          <li><%= link_to "Techniques",   '/techniques/home' %></li>
+          <li><%= link_to "Tutorials",   '/tutorials/index' %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <%= link_to "Home", root_path %>
-  <%= link_to "Techniques", "/techniques/home" %>
-
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

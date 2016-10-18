@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'tutorials/new'
+  get 'tutorials/index'
+
   get 'techniques/home'
   get 'home/index'
 
