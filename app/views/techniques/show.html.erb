@@ -1,0 +1,32 @@
+<% provide(:title, @technique.name) %>
+<div class="row">
+  <aside>
+    <section class="technique">
+      <h1>
+        <%= @technique.name %>
+      </h1>
+    </section>
+  </aside>
+  <div>
+    <% if @technique.tutorials.any? %>
+      <h3>Tutorials (<%= @technique.tutorials.count %>)</h3>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Link</th>
+          <th>Description</th>
+        </tr>
+
+        <ul class="tutorials">
+         <% @tutorials.each do |tutorial| %>
+            <tr>
+              <td><%= link_to tutorial.name, tutorial_path(tutorial.id) %></td>
+              <td> <a href= <%= tutorial.link %> target="_blank"><%= tutorial.link %></a> </td>
+              <td><%= tutorial.description %></td>
+            </tr>
+          <% end %>
+        </ul>
+      </table>
+    <% end %>
+  </div>
+</div>
