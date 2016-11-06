@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'techniques/home'
-  get 'home/index'
 
   root 'home#index'
+
+  resources :tutorials, only: [:index, :new]
+  resources :home, only: [:index]
+  resources :techniques, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
