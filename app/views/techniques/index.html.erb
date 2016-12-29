@@ -1,2 +1,12 @@
-<h1>Knitting Techniques</h1>
+<h1>All Techniques</h1>
 <p>Search by name, abbreviation, tag... </p>
+
+<table>
+  <ul class="techniques">
+   <% @techniques.each do |technique| %>
+      <tr>
+        <td><%= link_to technique.name, technique_path(technique.id) %></td>
+      </tr>
+    <% end %>
+  </ul>
+</table>

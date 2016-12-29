@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  root 'home#index'
 
+  root 'home#index'
+  
   get 'users/new'
   devise_for :users
-  
-  resources :tutorials, only: [:index, :new]
+
+  resources :tutorials, only: [:index, :new, :show]
   resources :home, only: [:index]
-  resources :techniques, only: [:index]
+  resources :techniques, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
