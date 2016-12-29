@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-
   root 'home#index'
 
+  get 'users/new'
+  devise_for :users
+  
   resources :tutorials, only: [:index, :new]
   resources :home, only: [:index]
   resources :techniques, only: [:index]
